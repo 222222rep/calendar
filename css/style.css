@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 100;
   color: black;
   margin: 0;
@@ -15,13 +15,23 @@ body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 #calendar {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  width: 420px;
+  max-width: 420px;
   border-radius: 10px;
   margin: 10px auto;
   /*   min-height: 570px; */
@@ -32,7 +42,7 @@ body {
 
 .header {
   height: 50px;
-  width: 420px;
+  max-width: 420px;
   background: white;
   text-align: center;
   position: relative;
@@ -46,6 +56,12 @@ body {
   font-weight: 100;
   letter-spacing: 1px;
   cursor: pointer; }
+  @media (max-width: 660px) {
+    .header h1 {
+      font-size: 16px;
+      line-height: 30px;
+      font-weight: 700;
+      padding-top: 0.5em; } }
 
 .left, .right {
   padding: 0 0.5em;
@@ -55,7 +71,10 @@ body {
   border-style: solid;
   top: 50%;
   margin-top: -7.5px;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out; }
 
 .left {
   border-width: 7.5px 10px 7.5px 0;
@@ -119,12 +138,16 @@ body {
   background: white;
   position: relative;
   z-index: 100; }
+  @media (max-width: 660px) {
+    .day {
+      padding: 0;
+      width: 30px; } }
 
 .day.other {
   color: rgba(0, 0, 0, 0.3); }
 
 .day.today {
-  color: #9ccaeb; }
+  color: #676b94; }
 
 .day-name {
   font-size: 9px;
@@ -132,10 +155,18 @@ body {
   margin-bottom: 5px;
   color: black;
   letter-spacing: .7px; }
+  @media (max-width: 660px) {
+    .day-name {
+      font-size: 6px;
+      margin-bottom: 0px; } }
 
 .day-number {
   font-size: 24px;
   letter-spacing: 1.5px; }
+  @media (max-width: 660px) {
+    .day-number {
+      font-size: 16px;
+      letter-spacing: 1px; } }
 
 .day .day-events {
   list-style: none;
@@ -170,7 +201,7 @@ body {
 
 .details {
   position: relative;
-  width: 420px;
+  width: 100%;
   height: 75px;
   background: #a4a4a4;
   background: #fbfbfb;
@@ -260,7 +291,7 @@ body {
 
 .entry {
   position: relative;
-  padding: 0 0 0 25px;
+  padding: 0 0 0 5px;
   font-size: 13px;
   display: inline-block;
   line-height: 30px;

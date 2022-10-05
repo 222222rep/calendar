@@ -80,11 +80,17 @@ body {
   border-width: 7.5px 10px 7.5px 0;
   border-color: transparent #a09fa0 transparent transparent;
   left: 20px; }
+  @media (max-width: 660px) {
+    .left {
+      left: 5px; } }
 
 .right {
   border-width: 7.5px 0 7.5px 10px;
   border-color: transparent transparent transparent #a09fa0;
   right: 20px; }
+  @media (max-width: 660px) {
+    .right {
+      right: 5px; } }
 
 .left:hover {
   border-color: transparent black transparent transparent; }
